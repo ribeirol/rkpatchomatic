@@ -51,8 +51,8 @@ for ( my $mhz = 100 ; $mhz <= 2500 ; $mhz++ ) {
 # CPU profiles
 my %cpu_profiles = (
 #  "cpustock" => 0,
-#  "cpu1608h" =>
-#    [
+  "cpu1608h" =>
+    [
       [900000, 312000],
       [925000, 504000],
       [1000000, 816000],
@@ -95,7 +95,7 @@ my %cpu_profiles = (
 
 # GPU profiles
 my %gpu_profiles = (
-  "gpustock" => 0,
+#  "gpustock" => 0,
   "gpu600" =>
     [
       [975000, 133000],
@@ -104,7 +104,7 @@ my %gpu_profiles = (
       [1050000, 300000],
       [1100000, 400000],
       [1250000, 600000],
-   ],
+    ],
    "gpu660h" =>
     [
       [975000, 133000],
@@ -122,7 +122,7 @@ my %gpu_profiles = (
       [1250000, 600000],
       [1350000, 660000],
       [1375000, 720000],
-   ],
+    ],
   );
 
 # DDR profiles
@@ -133,7 +133,7 @@ my %gpu_profiles = (
 # 4 DDR_FREQ_SUSPEND
 # only 1 and 2 seem to be used in the source code for Android sticks and even though 2 is set it doesn't seem to be used
 my %ddr_profiles = (
-  "ddrstock" => 0,
+#  "ddrstock" => 0,
 #  "ddr400" =>
 #    [
 #      [1000000, 300002],
@@ -145,6 +145,7 @@ my %ddr_profiles = (
 #      [1100000, 600001],
 #    ],
   "ddr667" =>
+    [
       [1100000, 400002],
       [1200000, 667001],
     ],
