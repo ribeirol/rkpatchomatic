@@ -65,8 +65,12 @@ my %cpu_profiles = (
 #    ],
   "cpu1750h" =>
     [
+      [900000, 312000],
+      [925000, 504000],
+      [1000000, 816000],
+      [1025000, 1008000],
       [1150000, 1200000],
-      [1350000, 1608000],
+      [1250000, 1408000],
       [1375000, 1750000],
     ],
 #  "cpu1920h" =>
@@ -96,8 +100,11 @@ my %gpu_profiles = (
 #    ],
   "gpu780h" =>
     [
+      [1000000, 200000],
+      [1050000, 300000],
       [1100000, 400000],
       [1250000, 600000],
+      [1300000, 660000],
       [1375000, 780000],
    ],
   );
@@ -110,7 +117,7 @@ my %gpu_profiles = (
 # 4 DDR_FREQ_SUSPEND
 # only 1 and 2 seem to be used in the source code for Android sticks and even though 2 is set it doesn't seem to be used
 my %ddr_profiles = (
-  "ddrstock" => 0,
+#  "ddrstock" => 0,
 #  "ddr400" =>
 #    [
 #      [1000000, 300002],
