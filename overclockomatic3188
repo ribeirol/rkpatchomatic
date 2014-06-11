@@ -43,6 +43,9 @@ for ( my $mhz = 100 ; $mhz <= 2500 ; $mhz++ ) {
   push( @freq_list, $mhz * 1000 + 2 );
   push( @freq_list, $mhz * 1000 + 3 );
   push( @freq_list, $mhz * 1000 + 4 );
+  push( @freq_list, $mhz * 1000 + 8 );
+  push( @freq_list, $mhz * 1000 + 16 );
+  push( @freq_list, $mhz * 1000 + 256 );
 }
 
 # below are the profiles used for the patched kernels
@@ -95,7 +98,7 @@ my %cpu_profiles = (
 
 # GPU profiles
 my %gpu_profiles = (
-#  "gpustock" => 0,
+  "gpustock" => 0,
   "gpu600" =>
     [
       [975000, 133000],
@@ -133,31 +136,24 @@ my %gpu_profiles = (
 # 4 DDR_FREQ_SUSPEND
 # only 1 and 2 seem to be used in the source code for Android sticks and even though 2 is set it doesn't seem to be used
 my %ddr_profiles = (
-#  "ddrstock" => 0,
-#  "ddr400" =>
-#    [
-#      [1000000, 300002],
-#      [1100000, 400001],
-#    ],
-#  "ddr600" =>
-#    [
-#      [1100000, 400002],
-#      [1100000, 600001],
-#    ],
-  "ddr667" =>
+  "ddrstock" => 0,
+  "ddr600" =>
     [
-      [1100000, 400002],
-      [1200000, 667001],
-    ],
-  "ddr720" =>
-    [
-      [1100000, 400002],
-      [1200000, 720001],
+      [1000000, 300001],
+      [1200000, 600002],
+      [1100000, 400004],
+      [1100000, 400008],
+      [1150000, 500016],
+      [1200000, 600256],
     ],
   "ddr800" =>
     [
-      [1100000, 400002],
-      [1250000, 800001],
+      [1100000, 400001],
+      [1200000, 800002],
+      [1150000, 500004],
+      [1150000, 500008],
+      [1200000, 600016],
+      [1250000, 800256],
     ],
   );
 
@@ -166,10 +162,12 @@ my %ddr_profiles = (
 
 my %ddr_freq_type_map = (
   0 => "",
-  1 => "1 DDR_FREQ_NORMAL",
+  1 => "1 DDR_FREQ_SUSPEND",
   2 => "2 DDR_FREQ_VIDEO",
-  3 => "3 DDR_FREQ_IDLE",
-  4 => "4 DDR_FREQ_SUSPEND",
+  4 => "4 DDR_FREQ_VIDEO LOW",
+  8 => "8 DDR_FREQ_VIDEO_LOW",
+  16 => "16 DDR_FREQ_IDLE",
+  256 => "256 DDR_FREQ_NORMAL",
 );
 
 my $freq_table_end = pack("V", 0) . pack("V", 0xfffffffe);
