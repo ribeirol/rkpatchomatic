@@ -172,10 +172,12 @@ my %ddr_profiles = (
 
 my %ddr_freq_type_map = (
   0 => "",
-  1 => "1 DDR_FREQ_NORMAL",
+  1 => "1 DDR_FREQ_SUSPEND",
   2 => "2 DDR_FREQ_VIDEO",
-  3 => "3 DDR_FREQ_IDLE",
-  4 => "4 DDR_FREQ_SUSPEND",
+  4 => "4 DDR_FREQ_VIDEO_LOW",
+  8 => "8 DDR_FREQ_VIDEO_LOW",
+  16 => "16 DDR_FREQ_IDLE",
+  256 => "256 DDR_FREQ_NORMAL",
 );
 
 my $freq_table_end = pack("V", 0) . pack("V", 0xfffffffe);
