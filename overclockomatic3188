@@ -133,7 +133,7 @@ my %gpu_profiles = (
 # 256 DDR_FREQ_NORMAL 
 # only 1 and 2 seem to be used in the source code for Android sticks and even though 2 is set it doesn't seem to be used
 my %ddr_profiles = (
-#  "ddrstock" => 0,
+  "ddrstock" => 0,
 #  "ddr400" =>
 #    [
 #      [1000000, 300002],
